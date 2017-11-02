@@ -14,6 +14,7 @@
 		0C9F0C231FA58D8400606719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9F0C211FA58D8400606719 /* LaunchScreen.storyboard */; };
 		0C9F0C2E1FA58D8400606719 /* AutoFontTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F0C2D1FA58D8400606719 /* AutoFontTextFieldTests.swift */; };
 		0C9F0C391FA58D8400606719 /* AutoFontTextFieldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F0C381FA58D8400606719 /* AutoFontTextFieldUITests.swift */; };
+		0C9F0C491FA58E0D00606719 /* AutoFontTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F0C481FA58E0D00606719 /* AutoFontTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		0C9F0C341FA58D8400606719 /* AutoFontTextFieldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoFontTextFieldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9F0C381FA58D8400606719 /* AutoFontTextFieldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFontTextFieldUITests.swift; sourceTree = "<group>"; };
 		0C9F0C3A1FA58D8400606719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C9F0C481FA58E0D00606719 /* AutoFontTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFontTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +99,9 @@
 		0C9F0C171FA58D8400606719 /* AutoFontTextField */ = {
 			isa = PBXGroup;
 			children = (
-				0C9F0C181FA58D8400606719 /* AppDelegate.swift */,
-				0C9F0C1A1FA58D8400606719 /* ViewController.swift */,
-				0C9F0C1C1FA58D8400606719 /* Main.storyboard */,
-				0C9F0C1F1FA58D8400606719 /* Assets.xcassets */,
-				0C9F0C211FA58D8400606719 /* LaunchScreen.storyboard */,
 				0C9F0C241FA58D8400606719 /* Info.plist */,
+				0C9F0C471FA58D9700606719 /* Example */,
+				0C9F0C461FA58D8E00606719 /* Classes */,
 			);
 			path = AutoFontTextField;
 			sourceTree = "<group>";
@@ -123,6 +122,26 @@
 				0C9F0C3A1FA58D8400606719 /* Info.plist */,
 			);
 			path = AutoFontTextFieldUITests;
+			sourceTree = "<group>";
+		};
+		0C9F0C461FA58D8E00606719 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0C9F0C481FA58E0D00606719 /* AutoFontTextView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0C9F0C471FA58D9700606719 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				0C9F0C181FA58D8400606719 /* AppDelegate.swift */,
+				0C9F0C1A1FA58D8400606719 /* ViewController.swift */,
+				0C9F0C211FA58D8400606719 /* LaunchScreen.storyboard */,
+				0C9F0C1F1FA58D8400606719 /* Assets.xcassets */,
+				0C9F0C1C1FA58D8400606719 /* Main.storyboard */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C9F0C1B1FA58D8400606719 /* ViewController.swift in Sources */,
+				0C9F0C491FA58E0D00606719 /* AutoFontTextView.swift in Sources */,
 				0C9F0C191FA58D8400606719 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XLVQ8GLDX8;
 				INFOPLIST_FILE = AutoFontTextField/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.barlowtucker.AutoFontTextField;
@@ -441,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XLVQ8GLDX8;
 				INFOPLIST_FILE = AutoFontTextField/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.barlowtucker.AutoFontTextField;
