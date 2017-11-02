@@ -55,7 +55,7 @@ public class AutoFontTextView: UIView {
         textView.delegate = self
         textView.font = UIFont.systemFont(ofSize: CGFloat(self.maxFontSize))
         textView.backgroundColor = self.backgroundColor
-        
+
         self.textView = textView
         self.addSubview(textView)
         
@@ -71,36 +71,30 @@ public class AutoFontTextView: UIView {
     
     private func growFont() {
         guard (self.textView.contentSize.height + 1.0 < self.frame.size.height) && (self.text.count > 0) && (self.currentSize < self.maxFontSize) else { return }
-        while (self.textView.contentSize.height + 1.0 < self.frame.size.height) && (self.currentSize < self.maxFontSize) {
-            self.currentSize += 1.0
-            self.textView.font = UIFont.systemFont(ofSize: CGFloat(self.currentSize))
-        }
+        
+        self.currentSize += 1.0
+        self.textView.font = UIFont.systemFont(ofSize: CGFloat(self.currentSize))
+        self.growFont()
     }
     
     private func shrinkFont() {
         guard (self.textView.contentSize.height > self.frame.size.height) && (self.currentSize > self.minFontSize) else { return }
-        while (self.textView.contentSize.height > self.frame.size.height) && (self.currentSize > self.minFontSize) {
-            self.currentSize -= 1.0
-            self.textView.font = UIFont.systemFont(ofSize: CGFloat(self.currentSize))
-        }
+        
+        self.currentSize -= 1.0
+        self.textView.font = UIFont.systemFont(ofSize: CGFloat(self.currentSize))
+        self.shrinkFont()
     }
     
     fileprivate func updateFontSize() {
         // First we grow the font, then shrink if needed
-        let didAddText = self.text.count > self.previousLength
-        self.previousLength = self.text.count
-
-        let contentHeight = self.textView.contentSize.height
-        if (contentHeight + 1.0 < self.frame.size.height) && (self.currentSize < self.maxFontSize) {
+        if (self.textView.contentSize.height + 1.0 < self.frame.size.height) && (self.currentSize < self.maxFontSize) {
             self.growFont()
-            self.textView.setNeedsLayout()
         }
 
         if self.textView.contentSize.height > self.frame.size.height && self.currentSize > self.minFontSize {
             self.shrinkFont()
-            self.textView.setNeedsLayout()
         }
-
+        
         guard self.textView.contentSize.height < self.frame.size.height else { return }
         // Center the text Vertically
         var topCorrection = (self.frame.size.height - self.textView.contentSize.height * self.textView.zoomScale) / 2.0
