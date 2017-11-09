@@ -26,6 +26,7 @@ public class AutoFontTextView: UIView {
     private var textView: UITextView = UITextView()
     private var currentSize: Double = 0.0
     private var previousLength: Int = 0
+    private var sizer:FontSizer! = nil
     
     // MARK: - UIView Methods
     public override init(frame: CGRect) {
@@ -67,37 +68,18 @@ public class AutoFontTextView: UIView {
         
         self.currentSize = self.maxFontSize
         self.clipsToBounds = true
-    }
-    
-    private func growFont() {
-        guard (self.textView.contentSize.height + 1.0 < self.frame.size.height) && (self.text.count > 0) && (self.currentSize < self.maxFontSize) else { return }
         
-        self.currentSize += 1.0
-        self.textView.font = UIFont.systemFont(ofSize: CGFloat(self.currentSize))
-        self.growFont()
-    }
-    
-    private func shrinkFont() {
-        guard (self.textView.contentSize.height > self.frame.size.height) && (self.currentSize > self.minFontSize) else { return }
-        
-        self.currentSize -= 1.0
-        self.textView.font = UIFont.systemFont(ofSize: CGFloat(self.currentSize))
-        self.shrinkFont()
+        self.sizer = FontSizer(font: UIFont.systemFont(ofSize: 12), minimum: self.minFontSize, maximum: self.maxFontSize)
     }
     
     fileprivate func updateFontSize() {
-        // First we grow the font, then shrink if needed
-        if (self.textView.contentSize.height + 1.0 < self.frame.size.height) && (self.currentSize < self.maxFontSize) {
-            self.growFont()
-        }
-
-        if self.textView.contentSize.height > self.frame.size.height && self.currentSize > self.minFontSize {
-            self.shrinkFont()
-        }
+        let size = self.sizer.size(forArea: self.frame.size, text: self.text)
+        self.textView.font = self.textView.font?.withSize(size)
+        let height = self.textView.sizeThatFits(CGSize(width: self.frame.size.width, height: CGFloat.greatestFiniteMagnitude)).height
         
-        guard self.textView.contentSize.height < self.frame.size.height else { return }
+        guard height < self.frame.size.height else { return }
         // Center the text Vertically
-        var topCorrection = (self.frame.size.height - self.textView.contentSize.height * self.textView.zoomScale) / 2.0
+        var topCorrection = (self.frame.size.height - height * self.textView.zoomScale) / 2.0
         topCorrection = max(0, topCorrection)
         self.textView.transform = CGAffineTransform(translationX: 0, y: topCorrection)
 

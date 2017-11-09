@@ -24,6 +24,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="189" id="R8e-Aa-hJI"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="This is a test"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.81568627449999997" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
