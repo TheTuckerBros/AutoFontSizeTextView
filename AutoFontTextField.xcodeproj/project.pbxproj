@@ -15,7 +15,6 @@
 		0C9F0C231FA58D8400606719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9F0C211FA58D8400606719 /* LaunchScreen.storyboard */; };
 		0C9F0C2E1FA58D8400606719 /* AutoFontTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F0C2D1FA58D8400606719 /* AutoFontTextFieldTests.swift */; };
 		0C9F0C391FA58D8400606719 /* AutoFontTextFieldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F0C381FA58D8400606719 /* AutoFontTextFieldUITests.swift */; };
-		0C9F0C491FA58E0D00606719 /* AutoFontTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F0C481FA58E0D00606719 /* AutoFontTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 		0C9F0C341FA58D8400606719 /* AutoFontTextFieldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoFontTextFieldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9F0C381FA58D8400606719 /* AutoFontTextFieldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFontTextFieldUITests.swift; sourceTree = "<group>"; };
 		0C9F0C3A1FA58D8400606719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C9F0C481FA58E0D00606719 /* AutoFontTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFontTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +127,6 @@
 		0C9F0C461FA58D8E00606719 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0C9F0C481FA58E0D00606719 /* AutoFontTextView.swift */,
 				0C60804B1FB3DFE900426102 /* FontSizer.swift */,
 			);
 			path = Classes;
@@ -282,7 +279,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C9F0C1B1FA58D8400606719 /* ViewController.swift in Sources */,
-				0C9F0C491FA58E0D00606719 /* AutoFontTextView.swift in Sources */,
 				0C60804C1FB3DFE900426102 /* FontSizer.swift in Sources */,
 				0C9F0C191FA58D8400606719 /* AppDelegate.swift in Sources */,
 			);

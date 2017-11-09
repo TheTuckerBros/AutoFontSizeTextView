@@ -10,16 +10,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    
+    private var sizer:FontSizer! = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.sizer = FontSizer(font: UIFont.systemFont(ofSize: 12), minimum: 8.0, maximum: 75.0)
+        self.updateFontSize()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    fileprivate func updateFontSize() {
+        let size = self.sizer.textViewSize(forArea: self.textView.frame.size, text: self.textView.text)
+        self.textView.font = self.textView.font?.withSize(size)
     }
-
-
 }
 
+extension ViewController: UITextViewDelegate {
+    public func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        // Update Font Size
+        self.updateFontSize()
+        
+        return true
+    }
+    
+    public func textViewDidChange(_ textView: UITextView) {
+        // Update Font Size
+        self.updateFontSize()
+    }
+}
